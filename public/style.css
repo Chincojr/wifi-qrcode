@@ -12,70 +12,128 @@ body {
     font-size: 20px;
 }
 
+    /*  QR.ejs*/
+
+.qr-wrap{
+    display: flex;
+    justify-content: center;
+    /* max-width: max-content; */
+}
+
 .wifi-image{
-    display: block;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* max-width: 650px; */
+
+}
+
+.qr-wrapper{
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+.link{
+    text-decoration: none;
     text-align: center;
-    margin: 25%;
-    margin-top: 0;
-    margin-bottom: 0;
+    width: inherit;
+    outline: none;
+    border: none;
+    padding: 15px 22px;
+    position: inherit;
+    background-color: rgb(23, 52, 89);
+    color: #f8f9f9;
+    text-decoration: none;
+    max-width: 256px;
+}
+
+.image-wrapper{
+   display: flex;
+   justify-content: center;
+
 }
 
 img{
-    height: 75%;
-    width: 75%;
+    width: inherit;
 }
 
-.link{
-    display: block ;
-    margin-top: 1%;
-    text-decoration: none;
+            /* Index.ejs */
+
+.form-name-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    /* max-width: 450px; */
+}
+.form-name{
+    border-style: solid;
+    border-color: black;
+    border-width: 0px 0px 1px 0px;
     text-align: center;
-    outline: none;
-    border: none;
-    padding: 15px 30px;
-    background-color: rgb(23, 52, 89);
-    color: #f8f9f9;
-    margin-bottom: 0;
 }
 
 .nav-bar{
     text-align: center;
-    font-size: 40px;
-    border: solid 5px;
-    outline: none;
-    border: none;
+    font-size: 3em;
     padding: 15px 30px;
     background-color: rgb(23, 52, 89);
     color: #f8f9f9;
+
 }
 
-.wrapper{
-    margin: 10% auto;
-    max-width: 400px;
+.input-element{
+    margin-bottom: 5px;
 }
 
-label{
-    /* display: flex; */
-    margin-bottom: 20px;
-    height: auto;
+.wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
 }
 
-.form-name{
-    text-align: center;
+.inside-wrapper{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 26px;
+    margin-right: 26px;
+
 }
 
 input{
-    border: none;
-    line-height: 25px;
-    font-size: 20px;
-    margin-left: 10px;
-    border-bottom: solid rgb(23, 52, 89) 1px;
+    outline: none;
+    border-style: solid;
+    border-color: rgb(23, 52, 89);
+    border-width: 0px 0px 1px 0px;
+
 }
 
+.input-text{
+    font-size: 16px;
+    font-weight: 100;
+    direction: ltr;
+    margin-left: 5px;
+}
+
+label{
+    font-size: 20px;
+    font-weight: 400;
+}
 
 #selection{
     border: none;
-    
+    outline: none;
+}
+
+.input-button{
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -85,6 +143,5 @@ button{
     padding: 15px 30px;
     background-color: rgb(23, 52, 89);
     color: #f8f9f9;
-    margin-left: 100px;
-    
+
 }
