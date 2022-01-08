@@ -10,23 +10,24 @@
     </head>
 <body>
     <nav class="nav-bar">Wifi QR Code Generator</nav>
+    
     <div class="wrapper">
-        <label class="form-name">
-            <h1 class="form-name">Create Wifi QR Code</h1>
-            <hr>
-        </label>
     <form action="/qrcode" method="post">
+        <div class="inside-wrapper">
+        <div class="form-name-container">
+            <h1 class="form-name">Create Wifi QR Code</h1>   
+        </div>
         <div class="container">
             <div class="input-element">
                 <label>
                     SSID:
-                    <input type="text"  name="ssid" required>
+                    <input  class= 'input-text' type="text"  name="ssid" >
                 </label>
             </div>
             <div class="input-element">
                 <label>
                     Encryption
-                    <select name="encryption" id="selection" required>
+                    <select class= 'input-text' name="encryption" id="selection" required>
                         <option value="">----  Encryption type ----</option>
                         <option value="WPA">WPA/WPA2/WPA3</option>
                         <option value="WEP">WEP</option>
@@ -37,19 +38,30 @@
             <div class="input-element">
                 <label>
                     Password:
-                    <input type="password" name="password" required>
+                    <input class= 'input-text' type="password" name="password" required>
                 </label>
             </div>
-            <div class="input-element">
+            <div class="input-element input-checkbox">
                 <label>
                     Hidden
                     <input  type="checkbox" name="checkbox" value="true"  >
-                    
                 </label>
             </div>
-            <div class="input element-button">
-                <button type="submit">Generate</button>
+            <div class="input-element input-button">
+                <button type="submit" onsubmit=" return validateForm()">Generate</button>
             </div>
+
+            <script>
+                const validateForm = () => {
+                    var ssid = document.getElementsByName('ssid')
+                    if(ssid == ''){
+                        alert('plz input wifi name')
+                        return false
+                    }
+                    
+                }
+            </script>
+        </div>
         </div>
 
     </form>
