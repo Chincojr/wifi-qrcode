@@ -7,27 +7,29 @@
     <title>Qr Code Gen</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="icon.ico">
-    </head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.25.0/axios.min.js" integrity="sha512-/Q6t3CASm04EliI1QyIDAA/nDo9R8FQ/BULoUFyN4n/BDdyIxeH7u++Z+eobdmr11gG5D/6nPFyDlnisDwhpYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
 <body>
     <nav class="nav-bar">Wifi QR Code Generator</nav>
     
     <div class="wrapper">
-    <form action="/qrcode" method="post">
+    <form action="/qrcode" method="post" onsubmit="return validateForm()">
         <div class="inside-wrapper">
         <div class="form-name-container">
             <h1 class="form-name">Create Wifi QR Code</h1>   
         </div>
         <div class="container">
+            <div id="error" style="display: none;">Worked</div>
             <div class="input-element">
                 <label>
                     SSID:
-                    <input  class= 'input-text' type="text"  name="ssid" >
+                    <input  class= 'input-text' type="text"  name="ssid" id="ssid" >
                 </label>
             </div>
             <div class="input-element">
                 <label>
                     Encryption
-                    <select class= 'input-text' name="encryption" id="selection" required>
+                    <select class= 'input-text' name="encryption" id="selection" >
                         <option value="">----  Encryption type ----</option>
                         <option value="WPA">WPA/WPA2/WPA3</option>
                         <option value="WEP">WEP</option>
@@ -38,7 +40,7 @@
             <div class="input-element">
                 <label>
                     Password:
-                    <input class= 'input-text' type="password" name="password" required>
+                    <input class= 'input-text' type="password" name="password" id="password">
                 </label>
             </div>
             <div class="input-element input-checkbox">
@@ -48,18 +50,32 @@
                 </label>
             </div>
             <div class="input-element input-button">
-                <button type="submit" onsubmit=" return validateForm()">Generate</button>
+                <button type="submit" >Generate</button>
             </div>
 
-            <script>
+            <script >
                 const validateForm = () => {
-                    var ssid = document.getElementsByName('ssid')
-                    if(ssid == ''){
-                        alert('plz input wifi name')
-                        return false
-                    }
-                    
+                    var ssid = document.getElementById("ssid").value;
+                    var select = document.getElementById("selection").value
+                    var password = document.getElementById("password").value
+                    if(ssid == ""){
+                        document.getElementById("error").style.display = "flex"
+                        document.getElementById('error').innerText = 'Please input ssid (wifi password)' ;
+                        return (false);
+                    }  
+                    if(select == ""){
+                        document.getElementById("error").style.display = "flex"
+                        document.getElementById('error').innerText = 'Please input Encryption Type' ;
+                        return (false);
+                    }  
+                    if(password == ""){
+                        document.getElementById("error").style.display = "flex"
+                        document.getElementById('error').innerText = 'Please input wifi password' ;
+                        return (false);
+                    }                 
                 }
+
+
             </script>
         </div>
         </div>
