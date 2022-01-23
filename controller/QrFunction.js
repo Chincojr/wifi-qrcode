@@ -1,4 +1,4 @@
-const qrcode =require('wifi-qr-code-generator')// Api required for the qr code generator
+const qrcode = require('wifi-qr-code-generator')// Api required for the qr code generator
 
 
 const Qr_Function = (req,res) => {
